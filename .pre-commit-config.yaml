@@ -1,0 +1,16 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-yaml
+    -   id: check-added-large-files
+-   repo: local
+    hooks:
+    -   id: sync-readme
+        name: Sync README.md with languages.txt
+        entry: ./sync_readme.sh
+        language: script
+        files: ^(languages\.txt|README\.md)$
+        pass_filenames: false
